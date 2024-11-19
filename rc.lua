@@ -337,8 +337,8 @@ end)
 
 -- local monitor_config = require 'auto_monitor'
 -- monitor_config.configure_monitors()
-awful.spawn.with_shell 'xrandr --output eDP-1 --mode 1680x1050 --primary --output DP-2 --right-of eDP-1'
--- awful.spawn.with_shell 'xrandr --output eDP-1 --primary --output DP-1 --right-of eDP-1'
+local exMonitor = 'DP-1'
+awful.spawn.with_shell('xrandr --output eDP-1 --mode 1680x1050 --primary --output ' .. exMonitor .. ' --right-of eDP-1')
 
 awful.spawn.with_shell 'gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg'
 awful.spawn.with_shell 'picom -b'
